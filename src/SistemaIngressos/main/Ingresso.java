@@ -24,6 +24,10 @@ public class Ingresso {
         return status;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
     public void venderIngresso() {
         if (status) {
             System.out.println("INGRESSO JÁ VENDIDO!");
