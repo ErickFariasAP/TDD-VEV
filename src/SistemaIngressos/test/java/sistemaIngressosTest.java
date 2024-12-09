@@ -15,6 +15,13 @@ public class sistemaIngressosTest {
     @DisplayName("Teste para checar quantidade de ingressos para um show")
     public void verificarQuantidadeIngressos() {
         Show novoShow = new Show(data, artista, cache, despesasInfra, qntLotes, dataEspecial);
+        assertEquals(0, novoShow.getTotalIngressosCadastrados());
+    }
+
+    @Test
+    @DisplayName("Teste para checar quantidade de ingressos para um show")
+    public void verificarQuantidadeIngressos() {
+        Show novoShow = new Show(data, artista, cache, despesasInfra, qntLotes, dataEspecial);
         novoShow.cadastrarIngressos(1000);
         assertEquals(1000, novoShow.getTotalIngressosCadastrados());
     }
@@ -66,5 +73,19 @@ public class sistemaIngressosTest {
     public void verificarGerarRelatorio() {
         Show novoShow = new Show(data, artista, cache, despesasInfra, qntLotes, dataEspecial);
         assertEquals("PREJUÍZO", novoShow.gerarRelatorio());
+    }
+
+    @Test
+    @DisplayName("Teste checagem do preço para data especial")
+    public void verificarGerarRelatorio() {
+        Show novoShow = new Show(data, artista, cache, 100, qntLotes, true);
+        assertEquals(150, novoShow.getDespesasInfra());
+    }
+
+    @Test
+    @DisplayName("Teste receita liquida")
+    public void verificarGerarRelatorio() {
+        Show novoShow = new Show(data, artista, cache, despesaInfra, qntLotes, true);
+        assertEquals(valorDaReceita, novoShow.getReceitaLiquida());
     }
 }
