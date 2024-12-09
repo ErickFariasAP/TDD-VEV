@@ -15,8 +15,9 @@ public class Show {
     Long idIngresso;
     Ingresso[] ingressos;
     Integer precoIngresso;
+    double porcentagemVIP;
 
-    public Show(String data, String artista, Integer cache, Integer despesasInfra, Integer qntLotes, Boolean dataEspecial, Integer precoIngresso) {
+    public Show(String data, String artista, Integer cache, Integer despesasInfra, Integer qntLotes, Boolean dataEspecial, Integer precoIngresso, double porcentagemVIP) {
         this.data = data;
         this.artista = artista;
         this.cache = cache;
@@ -35,11 +36,12 @@ public class Show {
         /*para faciliar estou considerando 1 milhão como a capacidade do local de shows*/
         this.ingressos = new Ingresso[1000000];
         this.precoIngresso = precoIngresso;
+        this.porcentagemVIP = porcentagemVIP;
     }
 
     public void cadastrarIngressos(Integer qntIngressos) {
         this.ingressosCadastrados += qntIngressos;
-        this.ingressosVIP += (int) Math.ceil(qntIngressos * 0.25);
+        this.ingressosVIP += (int) Math.ceil(qntIngressos * porcentagemVIP);
         cadastrarIngressosVIP(ingressosVIP);
         this.ingressosMeia += (int) Math.ceil(qntIngressos * 0.10);
         cadastrarIngressosMeia(ingressosMeia);
