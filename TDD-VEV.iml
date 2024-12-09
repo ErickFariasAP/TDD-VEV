@@ -4,7 +4,6 @@
     <content url="file://$MODULE_DIR$" dumb="true">
       <sourceFolder url="file://$MODULE_DIR$/src/ProcessadorContas/test/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/SistemaIngressos/test/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
     </content>
   </component>
 </module>
