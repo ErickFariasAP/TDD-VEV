@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/ProcessadorContas/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/ProcessadorContas/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/FunctionalTestsProcessadorContas/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/junit5Tests/test/java" isTestSource="true" />
     </content>
   </component>
 </module>
